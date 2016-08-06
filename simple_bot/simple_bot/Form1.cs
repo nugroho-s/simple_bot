@@ -23,5 +23,10 @@ namespace simple_bot
             Thread.Sleep(5000);
             Bot.Move(100);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Bot.CurrentMouse().ToString(),"current loc");
+        }
     }
 }
