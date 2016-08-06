@@ -21,7 +21,7 @@ namespace simple_bot
         private void button1_Click(object sender, EventArgs e)
         {
             Thread.Sleep(5000);
-            Bot.DoXMouseClick(2);
+            Bot.Move(100);
         }
     }
 }

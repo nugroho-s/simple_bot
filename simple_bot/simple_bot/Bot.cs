@@ -23,7 +23,7 @@ namespace simple_bot
             //Call the imported function with the cursor's current position
             int X = Cursor.Position.X;
             int Y = Cursor.Position.Y;
-            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint)X, (uint)Y, 0, 0);
+            mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
         }
 
         public static void DoXMouseClick(int x)
@@ -32,6 +32,11 @@ namespace simple_bot
             {
                 DoMouseClick();
             }
+        }
+
+        public static void Move(int xDelta=0, int yDelta=0)
+        {
+            mouse_event(1, (uint)xDelta, (uint)yDelta, 0, 0);
         }
     }
 }
