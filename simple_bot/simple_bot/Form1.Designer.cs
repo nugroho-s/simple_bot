@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_test = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // button_test
             // 
-            this.button1.Location = new System.Drawing.Point(86, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Test Click";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_test.Location = new System.Drawing.Point(86, 57);
+            this.button_test.Name = "button_test";
+            this.button_test.Size = new System.Drawing.Size(95, 41);
+            this.button_test.TabIndex = 0;
+            this.button_test.Text = "Test Click";
+            this.button_test.UseVisualStyleBackColor = true;
+            this.button_test.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -70,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(278, 244);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_test);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_test;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

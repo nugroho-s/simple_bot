@@ -15,6 +15,7 @@ namespace simple_bot
 {
     public partial class Form1 : Form
     {
+
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(ref Point lpPoint);
 
@@ -60,17 +61,21 @@ namespace simple_bot
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread.Sleep(5000);
-            Bot.Move(100);
+            //button click
+            /*Thread.Sleep(5000);
+            Bot.Move(100);*/
+            Bot.move_to("LINE");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //show loc
             MessageBox.Show(Bot.CurrentMouse().ToString(),"current loc");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //test pixel
             Thread.Sleep(5000);
             MessageBox.Show((GetColorAt(new Point(0,0))).ToString(), "pixel test");
         }
