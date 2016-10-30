@@ -15,6 +15,20 @@ namespace simple_bot
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(uint dwFlags, int dx, int dy, uint cButtons, uint dwExtraInfo);
 
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool GetCursorPos(out POINT lpPoint);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool SetCursorPos(int x, int y);
+
+        public struct POINT
+        {
+            public int x;
+            public int y;
+        }
+
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr FindWindow(string strClassName, string strWindowName);
 
@@ -50,22 +64,14 @@ namespace simple_bot
             }
         }
 
-        public static void Move(int xDelta=0, int yDelta=0)
+        public static void mouse_move(int xDelta=0, int yDelta=0)
         {
-            mouse_event(1, xDelta, yDelta, 0, 0);
+            SetCursorPos(xDelta, yDelta);
         }
 
         public static Point CurrentMouse()
         {
             return Cursor.Position;
-        }
-
-        public static void MoveAbs(int x,int y)
-        {
-            Point loc = CurrentMouse();
-            int dx = x - loc.X;
-            int dy = y - loc.Y;
-            Move(dx, dy);
         }
 
         public static Point get_loc(String x)
@@ -92,7 +98,7 @@ namespace simple_bot
         public static void move_to(String x)
         {
             Point abs = get_loc(x);
-            MoveAbs(abs.X, abs.Y);
+            mouse_move(abs.X, abs.Y);
         }
     }
 }

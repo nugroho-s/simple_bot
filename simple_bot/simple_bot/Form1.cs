@@ -62,9 +62,9 @@ namespace simple_bot
         private void button1_Click(object sender, EventArgs e)
         {
             //button click
-            /*Thread.Sleep(5000);
-            Bot.Move(100);*/
+            //Thread.Sleep(5000);
             Bot.move_to("LINE");
+            //Bot.MoveAbs(100, 100);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,7 +76,6 @@ namespace simple_bot
         private void button3_Click(object sender, EventArgs e)
         {
             //test pixel
-            Thread.Sleep(5000);
             MessageBox.Show((GetColorAt(new Point(0,0))).ToString(), "pixel test");
         }
     }
